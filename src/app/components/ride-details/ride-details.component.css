@@ -1,0 +1,9 @@
+.ride-details-container {
+    padding: 100px 0px 0px 500px
+}
+
+.add-ride-btn {
+    position: absolute;
+    right:470px;
+    top:155px
+}

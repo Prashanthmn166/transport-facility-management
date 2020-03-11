@@ -1,0 +1,33 @@
+<div class="ride-details-container">
+    <a routerLink="/dashboard">Dashboard</a>
+    <button *ngIf="!showPickupDetails" class="add-ride-btn" routerLink="/add-ride">Add Ride</button>
+    <select *ngIf="showPickupDetails" class="add-ride-btn" #vehicleType selected="all" (change)="changeVehicleType(vehicleType)">
+        <option value="all"> All</option>
+        <option *ngFor="let vehicle of vehicleTypdeDetails" value={{vehicle}}>{{ vehicle }}</option>
+    </select>
+    <table border="1px solid">
+        <tr>
+            <th>Emp Id</th>
+            <th>Vehicle Type</th>
+            <th>Vehicle No</th>
+            <th>Vacant seat</th>
+            <th>Time</th>
+            <th>Pickup point</th>
+            <th>Drop point</th>
+            <th>Pick up</th>
+        </tr>
+        <tr *ngFor="let ride of rideDetails">
+            <td>{{ ride.empId }}</td>
+            <td>{{ ride.vehicleType }}</td>
+            <td>{{ ride.vehicleNo }}</td>
+            <td>{{ ride.vacantSeats }}</td>
+            <td>{{ ride.time | date:'d/M/y h:m:s' }}</td>
+            <td>{{ ride.pickupPoint }}</td>
+            <td>{{ ride.dropPoint }}</td>
+            <td>
+                <button *ngIf="!showPickupDetails" (click)="pickUpRide(ride.rideId)">Pick up</button>
+                <button *ngIf="showPickupDetails" (click)="requestPickUp(ride.rideId)">Request Pick up</button>
+            </td>
+        </tr>
+    </table>
+</div>

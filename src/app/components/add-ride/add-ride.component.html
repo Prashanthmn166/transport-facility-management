@@ -1,0 +1,35 @@
+<div class="custom-logincontainer">
+    
+    <div class="custom-addride-container">
+    <h3 style="text-align: center">Add ride details</h3>
+        <form [formGroup]="addRideForm" (ngSubmit)="addRideDetails()">
+            <div class="custom-box">
+                <label>Vehicle Type : </label>
+                <select formControlName="vehicleType" selected="bike">
+                    <option *ngFor="let vehicle of vehicleTypdeDetails" value={{vehicle}}>{{ vehicle }}</option>
+                </select>
+            </div>
+            <div class="custom-box">
+                <label class="custom-addride-label">Vehicle No  </label>
+                <input type="text"  formControlName="vehicleNo">
+            </div>
+            <div class="custom-box">
+                <label class="custom-addride-label">Vacant seat  </label>
+                <input type="number" formControlName="vacantSeats">
+            </div>
+            <div class="custom-box">
+                <label class="custom-addride-label">Time  </label>
+                <input type="time" formControlName="time">
+            </div>
+            <div class="custom-box">
+                <label class="custom-addride-label">Pickup point  </label>
+                <input type="text" formControlName="pickupPoint">
+            </div>
+            <div class="custom-box">
+                <label class="custom-addride-label">Drop Point  </label>
+                <input type="text" formControlName="dropPoint">
+            </div>
+            <button type="submit" [disabled]="!addRideForm.valid">Add ride</button>
+        </form>
+    </div> 
+</div>
