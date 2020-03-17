@@ -11,7 +11,6 @@ import { ReactiveFormsModule } from "@angular/forms";
 
 import { AuthServiceService } from "./services/auth-service.service";
 import { RideDetailsComponent } from './components/ride-details/ride-details.component';
-import { PickupDetailsComponent } from './components/pickup-details/pickup-details.component';
 import { AddRideComponent } from './components/add-ride/add-ride.component';
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { AddRideComponent } from './components/add-ride/add-ride.component';
     LoginComponent,
     DashboardComponent,
     RideDetailsComponent,
-    PickupDetailsComponent,
     AddRideComponent
   ],
   imports: [
